@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block content %}
+<div class="p-10 space-y-10 animate__animated animate__fadeIn">
+  <div class="flex items-center gap-4">
+    <div
+      class="bg-blue-500 px-6 py-3 rounded-xl shadow-lg transition transform hover:scale-105 hover:bg-blue-600"
+    >
+      <h2 class="text-3xl font-bold text-white">My Projects</h2>
+    </div>
+  </div>
+
+  <div class="space-y-8">
+    <div>
+      <h3 class="text-xl font-bold text-primary mb-2">
+        Hospital Management System
+      </h3>
+      <p class="text-gray-800 text-base">
+        A Java-based desktop application for managing hospital data including
+        patients, doctors, appointments, billing, and reports.
+      </p>
+      <p class="mt-2 text-sm text-gray-600 italic">
+        Tech Stack: Java, JDBC, MySQL
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-primary mb-2">Tetris Game</h3>
+      <p class="text-gray-800 text-base">
+        A classic Tetris game built using C++ and graphics libraries.
+        Implemented real-time logic, user input, scoring, and line-clearing
+        animations.
+      </p>
+      <p class="mt-2 text-sm text-gray-600 italic">Tech Stack: C++, SDL</p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-primary mb-2">
+        AuraPoet - AI Poetry Generator
+      </h3>
+      <p class="text-gray-800 text-base">
+        A Django-based web application that generates beautiful poems using AI.
+        Users can input a topic, and the app returns creative, rhyming poetry
+        using a language model.
+      </p>
+      <p class="mt-2 text-sm text-gray-600 italic">
+        Tech Stack: Python, Django, OpenAI API
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-primary mb-2">
+        Cafe Management System
+      </h3>
+      <p class="text-gray-800 text-base">
+        A Python project to manage café orders, items, and billing. Includes an
+        interactive GUI, item inventory, and real-time order tracking.
+      </p>
+      <p class="mt-2 text-sm text-gray-600 italic">
+        Tech Stack: Python, Console base
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

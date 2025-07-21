@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Saqlain's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "hsla(245, 95%, 38%, 0.87)",
+              dark: "#1f2937",
+              glass: "rgba(255, 255, 255, 0.1)",
+            },
+            backdropBlur: {
+              xs: "2px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-white via-blue-200 to-blue-500 text-black min-h-screen"
+  >
+    <div class="flex flex-col md:flex-row min-h-screen">
+      <aside
+        class="w-full md:w-1/4 bg-gradient-to-b from-gray-900 to-gray-800 text-white p-6 shadow-lg flex flex-col items-center animate__animated animate__fadeInLeft"
+      >
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-2xl p-4 w-full flex flex-col sm:flex-row sm:items-center gap-4 shadow-inner border border-white/15"
+        >
+          <img
+            src="{% static 'pictures/saqlain.jpeg' %}"
+            alt="Saqlain"
+            class="h-16 w-16 rounded-full object-cover border-2 shadow-md self-center sm:self-auto"
+          />
+
+          <div class="flex flex-col text-center sm:text-left w-full">
+            <p class="text-base font-semibold text-white break-words">
+              Muhammad Saqlain Amin
+            </p>
+            <p class="text-sm text-gray-300 break-words">
+              Undergraduate AI Developer
+            </p>
+            <a
+              href="https://wa.me/923064476262"
+              target="_blank"
+              class="mt-2 px-3 py-1 text-xs border border-purple-400 text-purple-300 rounded-full hover:bg-green-600 hover:text-white transition w-fit mx-auto sm:mx-0"
+            >
+              WhatsApp Me
+            </a>
+          </div>
+        </div>
+
+        <nav
+          class="flex flex-col space-y-4 w-full mt-8 overflow-y-auto max-h-[calc(100vh-200px)] pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-300"
+        >
+          <a
+            href="{% url 'home' %}"
+            class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-sky-500 hover:text-white transition"
+          >
+            <i data-feather="home" class="w-5 h-5"></i><span>Home</span>
+          </a>
+          <a
+            href="{% url 'about' %}"
+            class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-teal-500 hover:text-white transition"
+          >
+            <i data-feather="user" class="w-5 h-5"></i><span>About Me</span>
+          </a>
+          <a
+            href="{% url 'skills' %}"
+            class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-rose-400 hover:text-white transition"
+          >
+            <i data-feather="cpu" class="w-5 h-5"></i><span>Skills</span>
+          </a>
+          <a
+            href="{% url 'projects' %}"
+            class="flex items-center space-x-3 p-3 rounded-lg border border-gray-700 hover:bg-violet-600 hover:text-white transition"
+          >
+            <i data-feather="folder" class="w-5 h-5"></i><span>Projects</span>
+          </a>
+        </nav>
+      </aside>
+
+      <div class="flex-1 flex flex-col">
+        <header
+          class="bg-primary text-white text-center py-4 shadow-md animate__animated animate__fadeInDown"
+        >
+          <h1 class="text-3xl font-bold">Welcome to Saqlain's Portfolio</h1>
+        </header>
+
+        <main
+          class="flex-1 overflow-y-auto p-4 md:p-6 animate__animated animate__fadeInRight"
+        >
+          {% block content %}{% endblock %}
+        </main>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
